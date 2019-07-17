@@ -1,8 +1,14 @@
 {
-    "version": 2,
-    "alias": "next-player-demo",
-    "name": "next-player",
-    "builds": [
-        { "src": "package.json", "use": "@now/next" }
-      ]
+  "version": 2,
+  "alias": "next-player-demo",
+  "name": "next-player",
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "API_BASE": "/api",
+      "MUSIC_DATA_API": "@music-data-api",
+      "S3_BUCKET_URL": "@s3-bucket-url",
+      "FALLBACK_TRACK_ID": "2"
+    }
   }
+}
