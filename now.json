@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "alias": "next-player-demo",
+    "name": "next-player",
+    "builds": [
+        { "src": "package.json", "use": "@now/next" }
+      ]
+  }
