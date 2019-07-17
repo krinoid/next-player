@@ -80,7 +80,7 @@ function Album({ album, albumSongs, status }) {
   return (
     <div>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={5}>
           <img src={album.album_image_file} className={classes.cover} />
         </Grid>
         <Grid item xs={12} sm={6}>

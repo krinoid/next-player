@@ -11,7 +11,8 @@ import AlbumsSection from '../ui/AlbumsSection';
 
 function Home({ albums, status, topListenedStatus, topListenedAlbums }) {
   if (status === 'ERROR' || topListenedStatus === 'ERROR') return <Error />;
-  if (status === 'LOADING' && !albums) return <CircularProgress size={20} />;
+  if ((status === 'LOADING' || topListenedStatus === 'LOADING') && !albums)
+    return <CircularProgress size={20} />;
 
   return (
     <>
