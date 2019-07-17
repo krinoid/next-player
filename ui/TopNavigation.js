@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   loader: {
     marginRight: theme.spacing(2),
-    color: '#fff'
+    color: '#fff',
   },
 }));
 

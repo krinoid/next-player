@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     transition: 'all .15s ease-in-out',
     '&:hover': {
-      transform: 'scale(1.05)'
+      transform: 'scale(1.05)',
     },
   },
   cardMedia: {

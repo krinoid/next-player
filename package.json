@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodenv -e next",
-    "build": "next build",
+    "build": "nodenv -e 'next build'",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fmt": "prettier --write '{lib,pages,ui}/**/*.js'"

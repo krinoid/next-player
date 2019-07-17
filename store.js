@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import produce from 'immer';
 import { normalize, schema } from 'normalizr';
 import get from 'lodash/get';
+import 'isomorphic-fetch';
 import { apiMiddleware, RSAA, getJSON } from 'redux-api-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -51,9 +52,9 @@ export const reducer = (state = initialState, action) => {
       return produce(baseState, draftState => {
         const albumsNormalized = normalize(action.payload, [albumSchema]);
         draftState.data.albumsById = {
-            ...draftState.data.albumsById,
-            ...get(albumsNormalized, ['entities', 'albums']),
-          };
+          ...draftState.data.albumsById,
+          ...get(albumsNormalized, ['entities', 'albums']),
+        };
         draftState.data.albumsIds = get(albumsNormalized, 'result');
       });
     case 'FETCH_TOP_LISTENED_ALBUMS':
@@ -120,6 +121,7 @@ export const fetchAlbum = ({ albumId }) => ({
       { type: 'FETCH_SINGLE_ALBUM_SUCCESS', payload: processApiSuccessResponse },
       'FETCH_SINGLE_ALBUM_ERROR',
     ],
+    fetch,
   },
 });
 

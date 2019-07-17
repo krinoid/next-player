@@ -3,8 +3,6 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
 
-require('isomorphic-fetch');
-
 import theme from '../lib/theme';
 
 class MyDocument extends Document {
