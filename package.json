@@ -1,0 +1,41 @@
+{
+  "name": "next-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodenv -e next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fmt": "prettier --write '{lib,pages,ui}/**/*.js'"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@cassette/components": "^2.0.0-beta.2",
+    "@cassette/core": "^2.0.0-beta.2",
+    "@cassette/hooks": "^2.0.0-beta.2",
+    "@cassette/player": "^2.0.0-beta.3",
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "@zeit/next-css": "^1.0.1",
+    "axios": "^0.19.0",
+    "immer": "^3.1.3",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.14",
+    "next": "^9.0.1",
+    "normalizr": "^3.4.0",
+    "qs": "^6.7.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-api-middleware": "^3.0.1",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "devDependencies": {
+    "node-env-run": "^3.0.2",
+    "prettier": "^1.18.2"
+  }
+}
