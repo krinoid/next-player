@@ -121,7 +121,6 @@ export const fetchAlbum = ({ albumId }) => ({
       { type: 'FETCH_SINGLE_ALBUM_SUCCESS', payload: processApiSuccessResponse },
       'FETCH_SINGLE_ALBUM_ERROR',
     ],
-    fetch,
   },
 });
 

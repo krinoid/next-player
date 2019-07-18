@@ -5,7 +5,7 @@
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "build": {
     "env": {
-      "API_BASE": "/api",
+      "API_BASE": "https://next-player-demo.now.sh/api",
       "MUSIC_DATA_API": "@music-data-api",
       "S3_BUCKET_URL": "@s3-bucket-url",
       "FALLBACK_TRACK_ID": "2"
