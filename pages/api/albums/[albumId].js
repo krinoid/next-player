@@ -33,8 +33,8 @@ async function handler(req) {
   const FALLBACK_TRACK_ID = process.env.FALLBACK_TRACK_ID;
 
   const songsWithUrl = albumSongs.map(song => {
-    // we've used small dataset, which includes only part of the songs
-    const hasAudio = song.set_subset === 'small';
+    // we've used medium dataset, which includes only part of the songs
+    const hasAudio = song.set_subset === 'small' || song.set_subset === 'medium';
     // if this song is not in the "small" dataset, we'll use fallback
     const filename = `${hasAudio ? song.track_id : FALLBACK_TRACK_ID}`.padStart(6, '0');
     const songDirectory = filename.substring(0, 3);
