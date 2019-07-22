@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import Grid from '@material-ui/core/Grid';
@@ -46,7 +47,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default ({ albums = [], title }) => {
+function AlbumsSection({ albums = [], title }) {
   const classes = useStyles();
 
   return (
@@ -59,9 +60,9 @@ export default ({ albums = [], title }) => {
           <CircularProgress size={20} className={classes.loader} />
         ) : (
           albums.map(album => (
-            <Grid item xs={12} sm={4} md={3} key={album.album_id}>
+            <Grid item xs={12} sm={4} md={3} key={`album-${album.album_id}`}>
               <Link href="/album/[albumId]" as={`/album/${album.album_id}`}>
-                <Card className={classes.card} key={`album-${album.album_id}`} elevation={2}>
+                <Card className={classes.card} elevation={2}>
                   <CardMedia
                     className={classes.cardMedia}
                     image={album.album_image_file}
@@ -82,4 +83,16 @@ export default ({ albums = [], title }) => {
       </Grid>
     </section>
   );
+}
+
+AlbumsSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  albums: PropTypes.arrayOf({
+    album_id: PropTypes.string.isRequired,
+    album_image_file: PropTypes.string.isRequired,
+    album_title: PropTypes.string.isRequired,
+    artist_name: PropTypes.string.isRequired,
+  }),
 };
+
+export default AlbumsSection;
